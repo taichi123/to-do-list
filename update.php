@@ -32,12 +32,15 @@ require 'db_conn.php';
                        type="datetime-local"
                        placeholder="End date?">
 
-                <select name="status" class="custom-select" style="width:200px;">
-                    <option value="0" <?php if ($todo['status'] === '0'){ ?> selected="selected" <?php } ?>>Planning</option>
-                    <option value="1" <?php if ($todo['status'] === '1'){ ?> selected="selected" <?php } ?>>Doing</option>
-                    <option value="2" <?php if ($todo['status'] === '2'){ ?> selected="selected" <?php } ?>>Complete</option>
-                </select>
-            <button type="submit">Update</button>
+                <div class="box">
+                    <select name="status" class="box">
+                        <option value="0" <?php if ($todo['status'] === '0'){ ?> selected="selected" <?php } ?>>Planning</option>
+                        <option value="1" <?php if ($todo['status'] === '1'){ ?> selected="selected" <?php } ?>>Doing</option>
+                        <option value="2" <?php if ($todo['status'] === '2'){ ?> selected="selected" <?php } ?>>Complete</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit">Update</button>
             <?php } ?>
         </form>
     </div>
