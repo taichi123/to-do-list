@@ -31,14 +31,12 @@ require 'db_conn.php';
                        value="<?php echo strftime('%Y-%m-%dT%H:%M:%S', strtotime($todo['end_date'])) ?>"
                        type="datetime-local"
                        placeholder="End date?">
-                <input name="status"
-                       value="<?php echo $todo['status'] ?>"
-                       type="datetime-local"
-                       placeholder="End date?">
-                <input type="number"
-                       name="status"
-                       value="<?php echo $todo['status'] ?>"
-                       min="0" max="2">
+
+                <select name="status" class="custom-select" style="width:200px;">
+                    <option value="0" <?php if ($todo['status'] === '0'){ ?> selected="selected" <?php } ?>>Planning</option>
+                    <option value="1" <?php if ($todo['status'] === '1'){ ?> selected="selected" <?php } ?>>Doing</option>
+                    <option value="2" <?php if ($todo['status'] === '2'){ ?> selected="selected" <?php } ?>>Complete</option>
+                </select>
             <button type="submit">Update</button>
             <?php } ?>
         </form>
