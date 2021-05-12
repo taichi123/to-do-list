@@ -12,6 +12,7 @@ require 'db_conn.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div class="main-section">
@@ -54,11 +55,11 @@ require 'db_conn.php';
             <!-- cần hằng số hóa status: 0:planning, 1:doing, 2:complete -->
             <div class="todo-item
             <?php if ($todo['status'] == 0) {?>
-            bRed
+            planing
              <?php } elseif ($todo['status'] == 1) {?>
-            bYellow
+            doing
             <?php } else { ?>
-            bGreen
+            complete
             <?php }?>" >
                     <span id="<?php echo $todo['id']; ?>"
                           class="remove-to-do">x</span>
